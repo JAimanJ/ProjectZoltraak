@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://chb6qitbya0yk"]
 
 [ext_resource type="Script" uid="uid://crh6dfdtab6hb" path="res://player.gd" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://cdc1hwufx7v54" path="res://enemy.gd" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://bvyachi7lmxga" path="res://boss.gd" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://uohi8se0yf8n" path="res://arena.gd" id="3_h2yge"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -26,31 +27,6 @@ environment = SubResource("Environment_0xm2m")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, -0.6960616, 0, 0)
 shadow_enabled = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=65415411]
-calculate_tangents = false
-use_collision = true
-size = Vector3(100, 1, 100)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=126295715]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 7.5, 0)
-use_collision = true
-size = Vector3(6, 15, 6)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=991168151]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 7.5, 8)
-use_collision = true
-size = Vector3(6, 15, 6)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1056045882]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 7.5, -15)
-use_collision = true
-size = Vector3(6, 15, 6)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=877306365]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 7.5, 20)
-use_collision = true
-size = Vector3(6, 15, 6)
-
 [node name="Player" type="CharacterBody3D" parent="." unique_id=805881991]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 script = ExtResource("1_ig7tw")
@@ -61,16 +37,9 @@ shape = SubResource("CapsuleShape3D_p7sqb")
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=1075408387]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0.6, 0)
 
-[node name="Enemy" type="CharacterBody3D" parent="." unique_id=1565702375]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -15)
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1239824687]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -30)
 script = ExtResource("2_0xm2m")
 
-[node name="Enemy2" type="CharacterBody3D" parent="." unique_id=1296859139]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, -18)
-up_direction = Vector3(0, 0.064929366, -0.9978899)
-script = ExtResource("2_0xm2m")
-
-[node name="Enemy3" type="CharacterBody3D" parent="." unique_id=818009288]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2, -18)
-up_direction = Vector3(0, 0.064929366, -0.9978899)
-script = ExtResource("2_0xm2m")
+[node name="Arena" type="Node3D" parent="." unique_id=1902826129]
+script = ExtResource("3_h2yge")
