@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Zoltraak"
+run/main_scene="uid://chb6qitbya0yk"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
